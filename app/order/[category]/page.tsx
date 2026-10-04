@@ -30,12 +30,12 @@ const ProductsByCategory = async ({ params }: CategoryDetailsType) => {
   const products = await getProducts(category)
 
   return (
-    <div className='flex flex-col mt-5 gap-3'>
-      <h1 className='px-3 font-semibold text-2xl'>
+    <div className='flex flex-1 flex-col gap-3 max-h-screen overflow-y-scroll no-scrollbar overflow-hidden'>
+      <h1 className='px-3 font-semibold text-2xl mt-5'>
         Elige y personaliza tu pedido a continuación
       </h1>
 
-      <div className='grid grid-cols-3 gap-3 p-3 h-screen  overflow-y-scroll no-scrollbar'>
+      <div className='grid md:grid-cols-3 gap-3 p-3'>
         {
           products?.map((product) => (
             <ProductCard key={product.id} product={product} />

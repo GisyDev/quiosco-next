@@ -16,7 +16,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${font.className} bg-gray-200`}
+      className={`${font.className} bg-gray-50`}
     >
       <body className="min-h-full flex flex-col">{children}</body>
     </html>
