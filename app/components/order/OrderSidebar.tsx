@@ -1,5 +1,5 @@
 import React from 'react'
-import { prisma } from '@/app/config/prismaAdapter'
+import { prisma } from '@/prisma/prismaAdapter'
 import CategoryIcon from '@/app/ui/CategoryIcon';
 
 

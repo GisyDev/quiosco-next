@@ -1,4 +1,4 @@
-import { prisma } from "@/app/config/prismaAdapter";
+import { prisma } from "@/prisma/prismaAdapter";
 import { categories } from "./data/categories"
 import { products } from "./data/products"
 import "dotenv/config";

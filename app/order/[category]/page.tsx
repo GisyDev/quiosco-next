@@ -1,6 +1,6 @@
 import ProductCard from '@/app/components/products/ProductCard'
-import { prisma } from '@/app/config/prismaAdapter'
-import { formatPrice } from '@/app/lib/formatPrice'
+import { prisma } from '@/prisma/prismaAdapter'
+import { formatPrice } from '@/src/lib/formatPrice'
 import React from 'react'
 
 type CategoryDetailsType = {
@@ -19,7 +19,7 @@ const getProducts = async (category: string) => {
 
     return products
   } catch (error) {
-
+    console.log(error);
   }
 }
 
