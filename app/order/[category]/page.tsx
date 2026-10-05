@@ -1,4 +1,5 @@
 import ProductCard from '@/app/components/products/ProductCard'
+import Heading from '@/app/components/ui/Heading'
 import { prisma } from '@/prisma/prismaAdapter'
 import { formatPrice } from '@/src/lib/formatPrice'
 import React from 'react'
@@ -31,9 +32,9 @@ const ProductsByCategory = async ({ params }: CategoryDetailsType) => {
 
   return (
     <div className='flex flex-1 flex-col gap-3 max-h-screen overflow-y-scroll no-scrollbar overflow-hidden'>
-      <h1 className='px-3 font-semibold text-2xl mt-5'>
+      <Heading>
         Elige y personaliza tu pedido a continuación
-      </h1>
+      </Heading>
 
       <div className='grid md:grid-cols-3 gap-3 p-3'>
         {

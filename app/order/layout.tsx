@@ -1,6 +1,7 @@
-import OrderSidebar from "@/app/components/order/OrderSidebar"
-import OrderSummary from '../components/order/OrderSummary';
-import ToastNotification from "../ui/ToastNotification";
+import OrderSidebar from "@/app/components/orders/OrderSidebar"
+import OrderSummary from '../components/orders/OrderSummary';
+import ToastNotification from "../components/ui/ToastNotification";
+
 const OrderLayout = ({ children }: Readonly<{ children: React.ReactNode }>) => {
     return (
         <>

@@ -2,7 +2,7 @@
 
 
 import Image from 'next/image';
-import { Category } from '../../src/generated/prisma/client';
+import { Category } from '../../../src/generated/prisma/client';
 import Link from 'next/link';
 import { useParams } from 'next/navigation';
 
