@@ -1,10 +1,16 @@
+"use client"
+
 import { ProductsWithCategory } from '@/app/admin/products/page';
 import { formatPrice } from '@/src/lib/formatPrice';
 import Link from 'next/link';
+import { useSearchParams } from 'next/navigation';
 import React from 'react'
 
 
 const AdminProductTable = ({ products }: { products: ProductsWithCategory }) => {
+
+    const params = useSearchParams()
+
     return (
         <div className="px-4 sm:px-6 lg:px-8">
             <div className="mt-8 flow-root ">
@@ -27,32 +33,44 @@ const AdminProductTable = ({ products }: { products: ProductsWithCategory }) => 
                                     </th>
                                 </tr>
                             </thead>
-                            <tbody className="divide-y divide-gray-200">
-                                {
-                                    products.length != 0 && products.map((product) => (
-                                        <tr key={product.id}>
-                                            <td className="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-0">
-                                                {product.name}
-                                            </td>
-                                            <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-                                                {formatPrice(product.price)}
-                                            </td>
-                                            <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-                                                {product.category.name}
-                                            </td>
-                                            <td className="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-0">
-                                                <Link
-                                                    href={`/admin/products/${product.id}/edit`}
-                                                    className='text-indigo-600 hover:text-indigo-800'
-                                                >
-                                                    Editar
-                                                </Link>
-                                            </td>
-                                        </tr>
-                                    ))
-                                }
-                            </tbody>
+                            {
+                                products.length != 0 &&
+                                    <tbody className="divide-y divide-gray-200">
+                                        {
+                                            products.length != 0 && products.map((product) => (
+                                                <tr key={product.id}>
+                                                    <td className="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-0">
+                                                        {product.name}
+                                                    </td>
+                                                    <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                                                        {formatPrice(product.price)}
+                                                    </td>
+                                                    <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                                                        {product.category.name}
+                                                    </td>
+                                                    <td className="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-0">
+                                                        <Link
+                                                            href={`/admin/products/${product.id}/edit`}
+                                                            className='text-indigo-600 hover:text-indigo-800'
+                                                        >
+                                                            Editar
+                                                        </Link>
+                                                    </td>
+                                                </tr>
+                                            ))
+                                        }
+                                    </tbody>
+                                    
+
+
+                            }
+
                         </table>
+                        {
+                            products.length == 0 &&  <p className="text-sm text-center border-t pt-3">
+                                No hay productos con la búsqueda: <strong>{params.get("search")}</strong> 
+                            </p>
+                        }
                     </div>
                 </div>
             </div>

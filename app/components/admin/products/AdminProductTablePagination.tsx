@@ -1,8 +1,19 @@
-import Link from 'next/link'
-import { redirect } from 'next/navigation'
+"use client"
+
+import { usePathname, useRouter, useSearchParams } from 'next/navigation'
 
 const AdminProductTablePagination = ({ page, totalPages }: { page: number, totalPages: number }) => {
 
+    const router = useRouter()
+    const pathname = usePathname();
+    const searchParams = useSearchParams();
+
+    function pageUrl(page: number) {
+        const params = new URLSearchParams(searchParams);
+        params.set('page', String(page));
+        
+        router.replace(`${pathname}?${params.toString()}`)
+    }
 
 
     const pages = Array.from({ length: totalPages }, (_, i) => i + 1)
@@ -12,29 +23,29 @@ const AdminProductTablePagination = ({ page, totalPages }: { page: number, total
             {
                 (page < totalPages)
                 && (
-                    <Link href={`/admin/products?page=${page + 1}`} className='bg-white px-3 py-1 border border-gray-200'>
+                    <button onClick={() => pageUrl(page + 1)} className='bg-white px-3 py-1 border border-gray-200'>
                         {">"}
-                    </Link>
+                    </button>
                 )
             }
             <div className='flex items-center'>
                 {
                     pages.map((nPage) => (
-                        <Link 
-                            key={nPage} 
-                            className={`${nPage === page ? "bg-gray-100" : "bg-white"}  px-3 py-1 border border-gray-200 text-sm`} 
-                            href={`/admin/products?page=${nPage}`}>
+                        <button
+                            key={nPage}
+                            className={`${nPage === page ? "bg-gray-100" : "bg-white"}  px-3 py-1 border border-gray-200 text-sm`}
+                            onClick={() => pageUrl(nPage)}>
                             {nPage}
-                        </Link>
+                        </button>
                     ))
                 }
-             
+
             </div>
             {
                 (page > 1)
-                && (<Link href={`/admin/products?page=${page - 1}`} className='bg-white px-3 py-1 border border-gray-200'>
+                && (<button onClick={() => pageUrl(page - 1)} className='bg-white px-3 py-1 border border-gray-200'>
                     {"<"}
-                </Link>
+                </button>
                 )
             }
         </nav>
