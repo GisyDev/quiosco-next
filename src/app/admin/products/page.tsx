@@ -6,7 +6,6 @@ import Link from 'next/link';
 import ProductSearch from '@/components/admin/products/ProductSearch';
 
 const getProducts = async (page: number, pageSize: number, search: string) => {
-  console.log(search);
 
   return await prisma.product.findMany({
     take: pageSize,
@@ -77,6 +76,10 @@ const ProductsPage = async ({ searchParams }: { searchParams: { page: string, se
 
       <ProductTablePagination page={page} totalPages={totalPages} />
     </section>
+  )
+
+  return (
+    <p>Prueba</p>
   )
 }
 
