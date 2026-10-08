@@ -1,12 +1,12 @@
 import { prisma } from '@/prisma/prismaAdapter'
-import React from 'react'
 import AdminImageUpload from './AdminImageUpload';
+import { Product } from '@/src/generated/prisma/client';
 
 const getCategories = async () => {
   return await prisma.category.findMany()
 }
 
-const AdminProductForm = async () => {
+const AdminProductForm = async ({ product }: { product?: Product }) => {
 
   const categories = await getCategories()
 
@@ -23,6 +23,7 @@ const AdminProductForm = async () => {
           name="name"
           className="block w-full p-3 bg-slate-100"
           placeholder="Nombre Producto"
+          defaultValue={product?.name}
         />
       </div>
 
@@ -36,6 +37,7 @@ const AdminProductForm = async () => {
           name="price"
           className="block w-full p-3 bg-slate-100"
           placeholder="Precio Producto"
+          defaultValue={product?.price}
         />
       </div>
 
@@ -48,6 +50,7 @@ const AdminProductForm = async () => {
           className="block w-full p-3 bg-slate-100"
           id="categoryId"
           name="categoryId"
+          defaultValue={product?.categoryId}
         >
           <option value="">-- Seleccione --</option>
           {
@@ -57,7 +60,7 @@ const AdminProductForm = async () => {
             ))
           }
         </select>
-        <AdminImageUpload/>
+        <AdminImageUpload image={product?.image}/>
       </div>
     </>
   )

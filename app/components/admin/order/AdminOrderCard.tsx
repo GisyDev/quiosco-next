@@ -1,19 +1,9 @@
 
 import { completeOrder } from '@/app/actions/completeOrderAction'
-import { Order, OrderProduct, Product } from '@/src/generated/prisma/client'
 import { formatPrice } from '@/src/lib/formatPrice'
-import React from 'react'
-
-type OrderWithProducts = Order & {
-    orderProducts: (OrderProduct & {
-        product: Product
-    })[]
-}
-
+import { OrderWithProducts } from '@/src/types/order'
 
 const AdminOrderCard = ({ order }: { order: OrderWithProducts }) => {
-
-
     return (
         <section
             aria-labelledby="summary-heading"

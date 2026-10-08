@@ -2,6 +2,7 @@ import { formatPrice } from '@/src/lib/formatPrice'
 import { Product } from '@/src/generated/prisma/client'
 import Image from 'next/image'
 import AddProductToCart from './AddProductToCart'
+import { getImagePath } from '../../../src/lib/getImagePath';
 
 
 type ProductCardType = {
@@ -15,7 +16,7 @@ const ProductCard = ({ product }: ProductCardType) => {
             <Image
                 width={400}
                 height={400}
-                src={`/products/${product.image}.jpg`}
+                src={getImagePath(product.image)}
                 alt={`Imagen de producto ${product.name}`}
             />
 
