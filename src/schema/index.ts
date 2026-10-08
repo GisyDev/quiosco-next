@@ -19,6 +19,8 @@ export const OrderIdSchema = z.object({
         .refine(value => value > 0, { message: "El orderId no es un número" })
 })
 
+export type OrderIdType = z.infer<typeof OrderIdSchema>
+
 export const productSearch = z.object({
     search: z.string()
         .trim()

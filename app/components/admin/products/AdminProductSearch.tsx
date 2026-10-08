@@ -57,7 +57,7 @@ const AdminProductSearch = () => {
                 <input type="text" placeholder='Buscar Producto' className='bg-white p-2' name='search' 
                 onChange={(value) => setSearchInputValue(value.target.value)}
                 value={searchInputValue || ""}/>
-                <input type="submit" value={"BUSCAR"} className='bg-indigo-500 p-2 text-white cursor-pointer' />
+                <input type="submit" value={"BUSCAR"} className='bg-indigo-500 p-2 text-white cursor-pointer hover:bg-indigo-600 transition-all' />
             </form>
         </div>
 

@@ -1,8 +1,6 @@
 import ProductCard from '@/app/components/products/ProductCard'
 import Heading from '@/app/components/ui/Heading'
 import { prisma } from '@/prisma/prismaAdapter'
-import { formatPrice } from '@/src/lib/formatPrice'
-import React from 'react'
 
 type CategoryDetailsType = {
   params: { category: string }
@@ -31,12 +29,12 @@ const ProductsByCategory = async ({ params }: CategoryDetailsType) => {
   const products = await getProducts(category)
 
   return (
-    <div className='flex flex-1 flex-col gap-3 max-h-screen overflow-y-scroll no-scrollbar overflow-hidden'>
+    <div className='flex flex-1 flex-col gap-3 max-h-screen overflow-y-scroll no-scrollbar overflow-hidden p-3'>
       <Heading>
         Elige y personaliza tu pedido a continuación
       </Heading>
 
-      <div className='grid md:grid-cols-3 gap-3 p-3'>
+      <div className='grid sm:grid-col-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-3'>
         {
           products?.map((product) => (
             <ProductCard key={product.id} product={product} />

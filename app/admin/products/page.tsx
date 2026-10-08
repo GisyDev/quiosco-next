@@ -62,13 +62,10 @@ const ProductsPage = async ({ searchParams }: { searchParams: { page: string, se
       <div className='flex justify-between items-center'>
         <Link
           href={`/admin/products/new`}
-          className='bg-amber-400 w-full text-xs px-10 py-2 text-center font-bold cursor-pointer lg:w-auto lg:justify-between text-gray-700'
+          className='bg-amber-400 w-full text-xs px-10 py-2 text-center font-bold cursor-pointer lg:w-auto lg:justify-between text-gray-700 hover:bg-amber-400/80 transition-all'
         >
           Crear producto
         </Link>
-
-        
-     
 
         <AdminProductSearch />
       </div>

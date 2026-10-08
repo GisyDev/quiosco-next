@@ -6,12 +6,12 @@ import { Category } from '../../../src/generated/prisma/client';
 import Link from 'next/link';
 import { useParams } from 'next/navigation';
 
-type CategoryIcon = {
+type CategoryNav = {
     category: Category
 }
 
 
-const CategoryIcon = ({ category }: CategoryIcon) => {
+const CategoryNav = ({ category }: CategoryNav) => {
 
     const params = useParams<{category: string}>()
 
@@ -20,7 +20,7 @@ const CategoryIcon = ({ category }: CategoryIcon) => {
         ${category.slug === params.category ? "bg-amber-400" : ""}`}
         href={`/order/${category.slug}`}
         >
-            <div className='relative size-16'>
+            <div className='relative size-10 md:size-11 lg:size-12 2xl:size-15'>
                 <Image
                     src={`/icon_${category.slug}.svg`}
                     alt={`Imagen de la categoria: ${category.name}`}
@@ -33,4 +33,4 @@ const CategoryIcon = ({ category }: CategoryIcon) => {
     )
 }
 
-export default CategoryIcon
+export default CategoryNav

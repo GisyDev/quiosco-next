@@ -42,7 +42,7 @@ const OrderSummary = () => {
   }
 
   return (
-    <aside className='h-screen overflow-y-scroll md:w-[20%] p-3 space-y-4'>
+    <aside className='h-screen overflow-y-scroll w-[32%] md:w-[25%] p-3 space-y-4'>
       <h1 className='text-center font-black text-3xl mt-3'>Mi pedido</h1>
 
       <div className='mt-3'>

@@ -1,6 +1,6 @@
 import React from 'react'
 import { prisma } from '@/prisma/prismaAdapter'
-import CategoryIcon from '@/app/components/ui/CategoryIcon';
+import CategoryNav from '@/app/components/orders/CategoryNav';
 import Logo from '../ui/Logo';
 
 
@@ -18,12 +18,12 @@ const OrderSidebar = async () => {
   const categories = await getCategories()
 
   return (
-    <aside className='flex flex-col bg-white md:w-[18%] h-screen'>
+    <aside className='flex flex-col bg-white w-[30%] md:w-[25%] 2xl:w-[25%] h-screen'>
       <Logo/>
-      <nav className='mt-10 w-full'>
+      <nav className='w-full'>
         {
           categories?.map((category) => (
-            <CategoryIcon
+            <CategoryNav
               key={category.id}
               category={category}
             />

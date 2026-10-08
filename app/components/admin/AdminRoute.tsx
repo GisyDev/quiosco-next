@@ -15,7 +15,9 @@ type AdminRouteType = {
 const AdminRoute = ({ link }: AdminRouteType) => {
 
     const pathname = usePathname()
-    const isActive = pathname.startsWith(link.url)
+    const isActive = pathname.endsWith(link.url)
+
+    console.log(isActive);
 
     return (
         <Link

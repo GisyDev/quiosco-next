@@ -22,8 +22,8 @@ const ProductCard = ({ product }: ProductCardType) => {
 
             <div className='flex flex-col flex-1 p-2 gap-2 justify-between'>
                 <div className='flex flex-col gap-3'>
-                    <h1 className='text-xl text-amber-500'>{product.name}</h1>
-                    <p className='text-xl'>{formatPrice(product.price)}</p>
+                    <h1 className='text-lg text-amber-500'>{product.name}</h1>
+                    <p className=''>{formatPrice(product.price)}</p>
                 </div>
                 <AddProductToCart product={product}/>
             </div>

@@ -12,7 +12,7 @@ const AdminOrdersPage = () => {
 
     const fetcher = () => fetch("/admin/orders/api").then((result) => result.json()).then((data) => data)
     const { data: orders, error, isLoading } = useSWR<OrderWithProducts[]>("/admin/orders/api", fetcher, {
-        refreshInterval: 1000,
+        refreshInterval: 20000,
         revalidateOnFocus: false
     });
 

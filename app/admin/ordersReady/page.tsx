@@ -10,11 +10,10 @@ const OrdersReady = () => {
     const fetcher = () => fetch("/admin/ordersReady/api").then((res) => res.json()).then((data) => data)
 
     const { data: readyOrders, isLoading, error } = useSWR<OrderWithProducts[]>("/admin/ordersReady/api", fetcher, {
-        refreshInterval: 60000,
+        refreshInterval: 20000,
         revalidateOnFocus: false
     })
 
-    console.log(readyOrders);
 
     if (readyOrders) return (
         <section className='flex flex-col items-center justify-center w-full'>

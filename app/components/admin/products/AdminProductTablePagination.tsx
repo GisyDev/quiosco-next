@@ -11,7 +11,7 @@ const AdminProductTablePagination = ({ page, totalPages }: { page: number, total
     function pageUrl(page: number) {
         const params = new URLSearchParams(searchParams);
         params.set('page', String(page));
-        
+
         router.replace(`${pathname}?${params.toString()}`)
     }
 
@@ -23,7 +23,10 @@ const AdminProductTablePagination = ({ page, totalPages }: { page: number, total
             {
                 (page < totalPages)
                 && (
-                    <button onClick={() => pageUrl(page + 1)} className='bg-white px-3 py-1 border border-gray-200'>
+                    <button
+                        onClick={() => pageUrl(page + 1)}
+                        className='bg-white px-3 py-1 border border-gray-200 cursor-pointer hover:bg-gray-100 transition-all'
+                    >
                         {">"}
                     </button>
                 )
@@ -33,7 +36,7 @@ const AdminProductTablePagination = ({ page, totalPages }: { page: number, total
                     pages.map((nPage) => (
                         <button
                             key={nPage}
-                            className={`${nPage === page ? "bg-gray-100" : "bg-white"}  px-3 py-1 border border-gray-200 text-sm`}
+                            className={`${nPage === page ? "bg-gray-100" : "bg-white"}  px-3 py-1 border border-gray-200 text-sm cursor-pointer hover:bg-gray-100 transition-all`}
                             onClick={() => pageUrl(nPage)}>
                             {nPage}
                         </button>
@@ -43,7 +46,7 @@ const AdminProductTablePagination = ({ page, totalPages }: { page: number, total
             </div>
             {
                 (page > 1)
-                && (<button onClick={() => pageUrl(page - 1)} className='bg-white px-3 py-1 border border-gray-200'>
+                && (<button onClick={() => pageUrl(page - 1)} className='bg-white px-3 py-1 border border-gray-200 cursor-pointer hover:bg-gray-100 transition-all'>
                     {"<"}
                 </button>
                 )
