@@ -22,7 +22,7 @@ Aplicación web de **pedidos para un quiosco**: los clientes eligen productos po
 - Confirmación con validación de datos y envío mediante **Server Actions**.
 
 <p align="center">
-  <img src="./docs/images/pagina-principal.png" width="45%" />
+  <img src="images/pagina-principal.png" width="100%" />
 </p>
 
 
