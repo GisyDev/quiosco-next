@@ -34,22 +34,20 @@ Completar orden con un clic mediante una Server Action.
   <img src="./docs/images/admin-productos.png" width="45%" />
 </p>
 
-<br/>
+
 - **Órdenes listas**: pedidos completados.
 <p align="center">
-  <img src="./docs/images/admin-ordenes-listas.png" width="45%" />
+  <img src=".images/admin-ordenes-listas.png" width="45%" />
 </p>
 
-<br/>
 - **Gestión de productos** del catálogo.
 <p align="center">
-  <img src="./docs/images/admin-productos.png" width="45%" />
+  <img src="./images/admin-productos.png" width="45%" />
 </p>
 
-<br/>
 - **Añadir un de productos** del catálogo.
 <p align="center">
-  <img src="./docs/images/admin-crear-producto.png" width="45%" />
+  <img src="/images/admin-crear-producto.png" width="45%" />
 </p>
 
 
