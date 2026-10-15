@@ -31,23 +31,23 @@ Aplicación web de **pedidos para un quiosco**: los clientes eligen productos po
 - **Órdenes pendientes** con refresco automático (SWR).
 Completar orden con un clic mediante una Server Action.
 <p align="center">
-  <img src="./docs/images/admin-productos.png" width="45%" />
+  <img src="images/admin-ordenes.png" width="100%" />
 </p>
 
 
 - **Órdenes listas**: pedidos completados.
 <p align="center">
-  <img src=".images/admin-ordenes-listas.png" width="45%" />
+  <img src="images/admin-ordenes-listas.png" width="100%" />
 </p>
 
 - **Gestión de productos** del catálogo.
 <p align="center">
-  <img src="./images/admin-productos.png" width="45%" />
+  <img src="images/admin-productos.png" width="100%" />
 </p>
 
 - **Añadir un de productos** del catálogo.
 <p align="center">
-  <img src="/images/admin-crear-producto.png" width="45%" />
+  <img src="images/admin-crear-producto.png" width="100%" />
 </p>
 
 
