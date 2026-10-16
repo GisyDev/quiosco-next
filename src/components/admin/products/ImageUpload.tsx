@@ -7,15 +7,13 @@ import { getImagePath } from '@/lib/getImagePath'
 
 const ImageUpload = ({ image }: { image: string | undefined }) => {
 
-    const [ImageUrl, setImageUrl] = useState<string>("");
-
-    console.log("ImageUrl:", ImageUrl);
-    console.log(ImageUrl ? ImageUrl : image);
+    const [ImageUrl, setImageUrl] = useState("");
 
     return (
         <CldUploadWidget
             onSuccess={(results, { widget }) => {
-                if (results.event === "success" && results.info) {
+                console.log(results);
+                if (results.event === "success" && typeof results.info === "object") {
                     widget.close()
                     setImageUrl(results.info.url)
                 }
